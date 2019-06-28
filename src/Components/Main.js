@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
 import axios from 'axios'
 import List from './List'
+import Inputs from './Inputs'
 import './main.css'
 
 
@@ -40,7 +41,7 @@ class Main extends Component{
 
   editItem = (item, cost, necessity, id) =>{
     axios.put(
-      `/api/grocery/${id}?newItem=${item}?newCost=${cost}?newNecessity=${necessity}`
+      `/api/grocery/${id}?newItem=${item}&?newCost=${cost}&?newNecessity=${necessity}`
     )
     .then(res => {
       this.setState({groceryList: res.data})
@@ -65,6 +66,8 @@ class Main extends Component{
 
   render(){
     return(
+      <main className='major'>
+
       <div className="main">
         {this.state.groceryList.map(item => {
           return(
@@ -77,13 +80,22 @@ class Main extends Component{
           )
         })
       }
-        <div className='inputs'>
+        </div>
+      <div className="inputBar">
+        <Inputs 
+        cost={this.state.cost} 
+        item={this.state.item} 
+        handleChange={this.handleChange} 
+        necessity={this.state.necessity} 
+        addItem={this.addItem} />
+        {/* <div className='inputs'>
           <input placeholder="item" value={this.state.item} name="item" onChange={this.handleChange} />
           <input placeholder="cost" value={this.state.cost} name="cost" onChange={this.handleChange} />
           <input placeholder="True or False" value={this.state.necessity} name="necessity" onChange={this.handleChange} />
           <button onClick={() => this.addItem()}>Add Item!</button>
-        </div>
+        </div> */}
       </div>
+      </main>
     )
   }
 }

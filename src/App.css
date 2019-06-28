@@ -1,0 +1,11 @@
+
+.App{
+  height: 100vh;
+  width: 100 vw;
+  background: url('lightpic.jfif');
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

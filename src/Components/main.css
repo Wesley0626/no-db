@@ -1,0 +1,7 @@
+.main{
+  height: 85vh;
+  width: 85vw;
+  background: #0c0032;
+  color: white;
+  overflow-y: scroll;
+}

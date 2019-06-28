@@ -28,11 +28,9 @@ class Note extends Component{
   }
 
   addNote = () => {
-    console.log('hit')
     axios
     .post('/api/note', {note: this.state.note})
     .then(res => {
-      console.log('WHY', res.data)
       this.setState({notes: res.data, note: ''})
     })
     .catch(err => {
@@ -47,11 +45,11 @@ class Note extends Component{
       <div className="frank">
           {editing? (
             <div>
-              <input value={this.state.note} name='note' onChange={this.handleChange} />
+              <input value={note} name='note' onChange={this.handleChange} />
               <button onClick={() => this.addNote()}>Add Note</button>
             </div>
             ) : (
-              <div onClick={this.toggleEdit}>Note{this.state.notes.note}</div>
+              <div onClick={this.toggleEdit}>Note: {this.state.notes.note}</div>
       )}
       </div>
     )

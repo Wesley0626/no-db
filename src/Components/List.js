@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
-import axios from 'axios'
 import Note from './Note'
+import './list.css'
 
 class List extends Component{
   constructor(props){
@@ -30,30 +30,29 @@ class List extends Component{
   }
 
   render(){
-    console.log(this.props)
-    let {fullItem} = this.props
     let {editing, item, cost,} = this.state
     return(
-      <div>
+      <div className='item'>
         {editing? (
-          <div>
-            <input value={item} onChange={this.handleChange} name='item'/>
-            <input value={cost} onChange={this.handleChange} name="cost" />
+          <div className="displayItems">
+            <input className="editInputs" className="elements" value={item} onChange={this.handleChange} name='item'/>
+            <input className="editInputs" className="element" value={cost} onChange={this.handleChange} name="cost" />
           </div>
         ) : (
-          <div>
-            <p>{item}</p>
-            <p>{cost}</p>
+          <div className="displayItems" id="displayItems">
+            <p className="elements">{item}</p>
+            <p className="element">{cost}</p>
           </div>
         )}
-
-        {editing? (
-           <button onClick={this.saveChanges}>Save</button>
-        ) : (
-          <button onClick={this.toggleEdit}>Edit</button>
-        )}
-        <button onClick={() => this.props.delete(this.props.fullItem.id)}>Delete item</button>
         <Note />
+        <div className="postButtons">
+        {editing? (
+           <button className="list-buttons" onClick={this.saveChanges}>Save</button>
+        ) : (
+          <button className="list-buttons" onClick={this.toggleEdit}>Edit</button>
+        )}
+        <button className="list-buttons" onClick={() => this.props.delete(this.props.fullItem.id)}>Delete item</button>    
+        </div>  
       </div>
     )
   }

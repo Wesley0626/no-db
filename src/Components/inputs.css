@@ -1,0 +1,19 @@
+.inputs{
+  width: 85vw;
+  height: 3vh;
+  background: #240090;
+  display: flex;
+}
+.input{
+  height: 3vh;
+  width: 30%;
+  background: #240090;
+  color:white;
+}
+.button{
+  height: 3.7vh;
+  width: 10%;
+  background: #240090;
+  font-size: 80%;
+  color: white;
+}
