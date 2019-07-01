@@ -15,7 +15,6 @@ class Main extends Component{
         necessity: ''
      }
   }
-
   componentDidMount(){
     axios.get('/api/grocery')
     .then(res => {
@@ -57,7 +56,7 @@ class Main extends Component{
   handleDelete = id => {
     axios.delete(`/api/grocery/${id}`)
     .then(res => {
-      this.setState({groceryList: res.data, item: '', cost: 0, necessity: ''})
+      this.setState({groceryList: res.data})
     })
     .catch(err => {
       console.log("Fasten your seatbelts. I'ts going to be a bumpy night")

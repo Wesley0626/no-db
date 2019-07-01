@@ -1,8 +1,17 @@
 .frank{
   width: 40%;
   display: flex;
-  
+  align-items: center;
+  justify-content: center;
+  color: #efd28d;
+  transition: .2s;
+}
+.frank:hover{
+color: red;
 }
 .noteButton{
-  background: none;
+  background:  #ff7700;
+}
+.noteInput{
+  background: #efd28d;
 }

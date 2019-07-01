@@ -1,19 +1,28 @@
 .inputs{
-  width: 85vw;
+  width: 75vw;
   height: 3vh;
-  background: #240090;
+  background: #efd28d;
   display: flex;
+  color: #a30000;
+  border-color: black;
+  transition: 0.2s;
 }
 .input{
   height: 3vh;
   width: 30%;
-  background: #240090;
-  color:white;
+  background: #efd28d;
+  color: #a30000;
+  border-color: black;
 }
 .button{
   height: 3.7vh;
   width: 10%;
-  background: #240090;
+  background: #a30000;
   font-size: 80%;
-  color: white;
+  color: #efd28d;
+  border-color: black;
+  transition: 0.2s;
+}
+.button:hover{
+  background: #7a0101;
 }

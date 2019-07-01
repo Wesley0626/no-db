@@ -32,7 +32,7 @@ class List extends Component{
   render(){
     let {editing, item, cost,} = this.state
     return(
-      <div className='item'>
+      <main className='item'>
         {editing? (
           <div className="displayItems">
             <input className="editInputs" className="elements" value={item} onChange={this.handleChange} name='item'/>
@@ -53,7 +53,7 @@ class List extends Component{
         )}
         <button className="list-buttons" onClick={() => this.props.delete(this.props.fullItem.id)}>Delete item</button>    
         </div>  
-      </div>
+      </main>
     )
   }
 

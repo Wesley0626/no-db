@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 import axios from 'axios'
+import './note.css'
 
 class Note extends Component{
   constructor(){
@@ -45,11 +46,11 @@ class Note extends Component{
       <div className="frank">
           {editing? (
             <div>
-              <input value={note} name='note' onChange={this.handleChange} />
-              <button onClick={() => this.addNote()}>Add Note</button>
+              <input className='noteInput' value={note} name='note' onChange={this.handleChange} />
+              <button className='noteButton' onClick={() => this.addNote()}>Add Note</button>
             </div>
             ) : (
-              <div onClick={this.toggleEdit}>Note: {this.state.notes.note}</div>
+              <div onClick={this.toggleEdit}>{this.state.notes.note || "Note:"}</div>
       )}
       </div>
     )

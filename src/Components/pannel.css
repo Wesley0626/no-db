@@ -1,0 +1,27 @@
+.links{
+  height: 60vh;
+  width: 10vw;
+  position: fixed;
+  left: 0;
+}
+.head{
+  color: white;
+  font-size: 170%;
+  margin-bottom: 20px;
+}
+.linkContainer{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+.link{
+  color: white;
+  margin-top: 20px;
+  font-size: 130%;
+  transition: .1s;
+}
+.link:hover{
+  color: rgb(60, 113, 156);
+  font-size: 150%;
+}

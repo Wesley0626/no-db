@@ -12,7 +12,6 @@ module.exports ={
     }
     id++
     notes.push(newNote)
-    console.log(notes[id-1])
     res.status(200).send(notes[id-1])
   }
 }
